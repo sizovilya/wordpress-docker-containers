@@ -2,6 +2,9 @@
 
 ## Run:
 
+ - Copy site files to apache/files/site/
+ - Copy database dump to root directory
+
 Go to root dir
 ```
 chmod +x setUpWordpress.sh
