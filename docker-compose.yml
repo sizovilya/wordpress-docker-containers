@@ -1,0 +1,24 @@
+version: '2'
+services:
+  web:
+      image: apache
+      build:
+       context: ./apache
+       dockerfile: Dockerfile
+      links:
+       - mysql
+      ports:
+       - "80:80"
+      container_name: apache
+      volumes:
+       - ./apache/files/site/:/var/www/localhost/htdocs/
+  mysql:
+      image: mysql
+      build:
+       context: ./mysql
+       dockerfile: Dockerfile
+      ports:
+       - "3306:3306"
+      container_name: mysql
+      volumes:
+       - ./mysql/app/:/app/
